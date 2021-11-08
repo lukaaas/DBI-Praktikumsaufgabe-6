@@ -1,14 +1,21 @@
+import java.sql.*;
+
+//10.0.2.15
 public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("HelloWorld Anne");
-        System.out.println("Hallo world Sihem");
-        System.out.println("Hallo Welt Lukas");
-        System.out.println("This is a test from my mac");
-        System.out.println("This is a test from my computer");
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.178.47:3306/DBI", "dbi","root");
 
+            System.out.println("Connect");
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
 
     }
-
 }
+
